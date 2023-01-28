@@ -77,8 +77,9 @@ public class WhatsappRepository {
                     return messages.size();
                 }
             }
+            throw new Exception("You are not allowed to send message");
         }
-        throw new Exception();
+        throw new Exception("Group does not exist");
     }
     public String changeAdmin(User approver, User user, Group group) throws Exception {
         if(adminMap.containsKey(group)&&groupUserMap.containsKey(group)){
